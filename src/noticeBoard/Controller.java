@@ -17,6 +17,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import movieTest.movieTestMain;
 
 public class Controller implements Initializable{
 	@FXML public ImageView imageProfile;

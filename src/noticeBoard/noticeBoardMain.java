@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import movieTest.testController;
 
 public class noticeBoardMain extends Application{
 	
@@ -14,7 +15,7 @@ public class noticeBoardMain extends Application{
 		
 		Parent root = loader.load();
 		
-		testController ctrl = loader.getController();
+		Controller ctrl = loader.getController();
 		ctrl.setRoot(root);
 		
 		Scene scene = new Scene(root);
