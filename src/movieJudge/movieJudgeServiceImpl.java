@@ -1,8 +1,9 @@
-package movieTest;
+package movieJudge;
 
 import javafx.scene.Parent;
 
-public class MovieTestServiceImpl implements MovieTestService{
+public class movieJudgeServiceImpl implements movieJudgeService{
+	
 	Parent root;
 	
 	@Override

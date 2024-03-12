@@ -17,6 +17,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import movieJudge.movieJudgeMain;
 import movieTest.movieTestMain;
 
 public class Controller implements Initializable{
@@ -35,6 +36,7 @@ public class Controller implements Initializable{
 	String path;
 	String path1;
 	Parent root;
+	String mvpath1, mvpath2, mvpath3, mvpath4;
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -55,31 +57,34 @@ public class Controller implements Initializable{
 		
 		imageArr = FXCollections.observableArrayList();
 		File fileList = new File(path);
-		imageArr = FXCollections.observableArrayList();
+		//imageArr = FXCollections.observableArrayList();
 		for(String p : fileList.list() ) {
 			//System.out.println(p);
 			imageArr.add(p);
 		}
-		// 6
-		int mok = imageArr.size() / 4; // 1
-		int nmg = imageArr.size() % 4; // 2
+		
+		int mok = imageArr.size() / 4; 
+		int nmg = imageArr.size() % 4; 
 		if (mok >= 1) {
 			for (int i = 0; i < 4; i++) {
 				String str = "file:/" + path + "/" + imageArr.get(i);
-				//System.out.println(imageArr.get(i));
 				Image img = new Image(str);
 				if (i == 0) {
 					movie1Profile.setImage(img);
-					movie1Name.setText(imageArr.get(i));
+					movie1Name.setText(imageArr.get(i).substring(0, imageArr.get(i).length()-4));
+					mvpath1 = imageArr.get(i);
 				}else if (i == 1) {
 					movie2Profile.setImage(img);
-					movie2Name.setText(imageArr.get(i));
+					movie2Name.setText(imageArr.get(i).substring(0, imageArr.get(i).length()-4));
+					mvpath2 = imageArr.get(i);
 				}else if (i == 2) {
 					movie3Profile.setImage(img);
-					movie3Name.setText(imageArr.get(i));
+					movie3Name.setText(imageArr.get(i).substring(0, imageArr.get(i).length()-4));
+					mvpath3 = imageArr.get(i);
 				}else {
 					movie4Profile.setImage(img);
-					movie4Name.setText(imageArr.get(i));
+					movie4Name.setText(imageArr.get(i).substring(0, imageArr.get(i).length()-4));
+					mvpath4 = imageArr.get(i);
 				}
 			}
 		}else {
@@ -88,16 +93,20 @@ public class Controller implements Initializable{
 				Image img = new Image(str);
 				if (i == 0) {
 					movie1Profile.setImage(img);
-					movie1Name.setText(imageArr.get(i));
+					movie1Name.setText(imageArr.get(i).substring(0, imageArr.get(i).length()-4));
+					mvpath1 = imageArr.get(i);
 				}else if (i == 1) {
 					movie2Profile.setImage(img);
-					movie2Name.setText(imageArr.get(i));
+					movie2Name.setText(imageArr.get(i).substring(0, imageArr.get(i).length()-4));
+					mvpath2 = imageArr.get(i);
 				}else if (i == 2) {
 					movie3Profile.setImage(img);
-					movie3Name.setText(imageArr.get(i));
+					movie3Name.setText(imageArr.get(i).substring(0, imageArr.get(i).length()-4));
+					mvpath3 = imageArr.get(i);
 				}else {
 					movie4Profile.setImage(img);
-					movie4Name.setText(imageArr.get(i));
+					movie4Name.setText(imageArr.get(i).substring(0, imageArr.get(i).length()-4));
+					mvpath4 = imageArr.get(i);
 				}
 			}
 		}
@@ -121,16 +130,20 @@ public class Controller implements Initializable{
 				Image img = new Image(str);
 				if (i == 4) {
 					movie1Profile.setImage(img);
-					movie1Name.setText(imageArr.get(i));
+					movie1Name.setText(imageArr.get(i).substring(0, imageArr.get(i).length()-4));
+					mvpath1 = imageArr.get(i);
 				}else if (i == 5) {
 					movie2Profile.setImage(img);
-					movie2Name.setText(imageArr.get(i));
+					movie2Name.setText(imageArr.get(i).substring(0, imageArr.get(i).length()-4));
+					mvpath2 = imageArr.get(i);
 				}else if (i == 6) {
 					movie3Profile.setImage(img);
-					movie3Name.setText(imageArr.get(i));
+					movie3Name.setText(imageArr.get(i).substring(0, imageArr.get(i).length()-4));
+					mvpath3 = imageArr.get(i);
 				}else {
 					movie4Profile.setImage(img);
-					movie4Name.setText(imageArr.get(i));
+					movie4Name.setText(imageArr.get(i).substring(0, imageArr.get(i).length()-4));
+					mvpath4 = imageArr.get(i);
 				}
 			}
 		}else {
@@ -139,16 +152,20 @@ public class Controller implements Initializable{
 				Image img = new Image(str);
 				if (i == 0) {
 					movie1Profile.setImage(img);
-					movie1Name.setText(imageArr.get(i));
+					movie1Name.setText(imageArr.get(i).substring(0, imageArr.get(i).length()-4));
+					mvpath1 = imageArr.get(i);
 				}else if (i == 1) {
 					movie2Profile.setImage(img);
-					movie2Name.setText(imageArr.get(i));
+					movie2Name.setText(imageArr.get(i).substring(0, imageArr.get(i).length()-4));
+					mvpath2 = imageArr.get(i);
 				}else if (i == 2) {
 					movie3Profile.setImage(img);
-					movie3Name.setText(imageArr.get(i));
+					movie3Name.setText(imageArr.get(i).substring(0, imageArr.get(i).length()-4));
+					mvpath3 = imageArr.get(i);
 				}else {
 					movie4Profile.setImage(img);
-					movie4Name.setText(imageArr.get(i));
+					movie4Name.setText(imageArr.get(i).substring(0, imageArr.get(i).length()-4));
+					mvpath4 = imageArr.get(i);
 				}
 			}
 		}
@@ -172,33 +189,49 @@ public class Controller implements Initializable{
 				Image img = new Image(str);
 				if (i == 8) {
 					movie1Profile.setImage(img);
+					movie1Name.setText(imageArr.get(i).substring(0, imageArr.get(i).length()-4));
+					mvpath1 = imageArr.get(i);
 				}else if (i == 9) {
 					movie2Profile.setImage(img);
+					movie2Name.setText(imageArr.get(i).substring(0, imageArr.get(i).length()-4));
+					mvpath2 = imageArr.get(i);
 				}else if (i == 10) {
 					movie3Profile.setImage(img);
+					movie3Name.setText(imageArr.get(i).substring(0, imageArr.get(i).length()-4));
+					mvpath3 = imageArr.get(i);
 				}else {
 					movie4Profile.setImage(img);
+					movie4Name.setText(imageArr.get(i).substring(0, imageArr.get(i).length()-4));
+					mvpath4 = imageArr.get(i);
 				}
 			}
 		}else {
-			for (int i = 8; i < 8 + nmg; i++) {
+			for (int i = 8; i < 8+nmg + nmg; i++) {
 				String str = "file:/" + path + "/" + imageArr.get(i);
 				Image img = new Image(str);
 				if (i == 8) {
 					movie1Profile.setImage(img);
+					movie1Name.setText(imageArr.get(i).substring(0, imageArr.get(i).length()-4));
+					mvpath1 = imageArr.get(i);
 				}else if (i == 9) {
 					movie2Profile.setImage(img);
+					movie2Name.setText(imageArr.get(i).substring(0, imageArr.get(i).length()-4));
+					mvpath2 = imageArr.get(i);
 				}else if (i == 10) {
 					movie3Profile.setImage(img);
+					movie3Name.setText(imageArr.get(i).substring(0, imageArr.get(i).length()-4));
+					mvpath3 = imageArr.get(i);
 				}else {
 					movie4Profile.setImage(img);
+					movie4Name.setText(imageArr.get(i).substring(0, imageArr.get(i).length()-4));
+					mvpath4 = imageArr.get(i);
 				}
 			}
 		}
 	}
 	
 	public void watchMovieButton() {
-		
+		page1();
 	}
 	
 	public void movieTestButton() {
@@ -211,21 +244,31 @@ public class Controller implements Initializable{
 //		stage.setScene(scene);
 //		stage.show();
 		movieTestMain mtm = new movieTestMain();
+		System.out.println(root);
 		mtm.viewFx(root);
 		
 	}
+	movieJudgeMain mjm = new movieJudgeMain();
 	
 	public void movie1judge() {
-		
+		String name;
+		name = movie1Name.getText();
+		mjm.viewFx(root, name, mvpath1);
 	}
 	public void movie2judge() {
-		
+		String name;
+		name = movie2Name.getText();
+		mjm.viewFx(root, name, mvpath2);
 	}
 	public void movie3judge() {
-		
+		String name;
+		name = movie3Name.getText();
+		mjm.viewFx(root, name, mvpath3);
 	}
 	public void movie4judge() {
-		
+		String name;
+		name = movie4Name.getText();
+		mjm.viewFx(root, name, mvpath4);
 	}
 	public void setRoot(Parent root) {
 		this.root = root;
